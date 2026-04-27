@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Chicken | Premium Chicken Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pre-header" class="pre-header">
+        <p id="rotating-text">Buy Now</p>
+    </div>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-section logo-section">
+                <div class="logo">
+                    <a href="#top" class="logo-link">
+                        <img src="pics/logo.jpg" alt="Mr. Chicken Logo" class="logo-img">
+                        <span class="logo-text">Mr. Chicken</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-section links-section">
+                <ul class="nav-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#products-section">Products</a></li>
+                    <li><a href="#about-section">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section cart-section">
+                <div class="cart-container">
+                    <button id="cart-btn" onclick="toggleCart()">
+                        <span>🛒 View Cart</span>
+                        <span id="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Freshness You Can Trust in Every Cut.</h1>
+                <p>Premium quality chicken components delivered to your business.</p>
+                <a href="#products-section" class="cta-btn">Buy Products Now</a>
+            </div>
+        </section>
+
+        <section id="products-section" class="inventory-container">
+            <div class="section-header">
+                <h2>Our Premium Selections</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="product-grid"></div>
+        </section>
+
+        <section id="about-section" class="about-container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content-wrapper">
+                <div class="about-text">
+                    <h3>Our Commitment to Quality</h3>
+                    <p>At Mr. Chicken, we pride ourselves on being a trusted partner for businesses seeking the highest standards in poultry products. We specialize in providing fresh, carefully handled chicken components that meet rigorous safety and quality benchmarks.</p>
+                    <p>Our mission is to ensure that every cut delivered to your doorstep maintains peak freshness, helping you serve the best to your customers.</p>
+                </div>
+                <div class="about-image">
+                    <img src="pics/logo.jpg" alt="Mr. Chicken Logo Large" class="enlarged-logo">
+                </div>
+            </div>
+        </section>
+
+        <section id="ceo-section" class="ceo-container">
+            <div class="section-header">
+                <h2>Meet The CEO</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="ceo-card">
+                <div class="ceo-image-wrapper">
+                    <img src="pics/guk.jpg" alt="CEO of Mr. Chicken" class="ceo-image">
+                    <div class="ceo-image-decoration"></div>
+                </div>
+                <div class="ceo-info">
+                    <span class="ceo-badge">Leadership</span>
+                    <h3>Jasper Gomez</h3>
+                    <p class="ceo-title">Founder & Chief Executive Officer</p>
+                    <div class="ceo-bio">
+                        <p>With over five years of specialized experience in the poultry industry, Jasper Gomez founded Mr. Chicken with a clear, ambitious vision: to bridge the gap between farm-to-table freshness and commercial-grade excellence.</p>
+                        <p>His unwavering commitment to ethical sourcing and rigorous quality control has positioned the company as a premier industry leader in the Pampanga region. Under his leadership, Mr. Chicken ensures that every partner and client receives premium products that consistently surpass standard industry benchmarks.</p>
+                    </div>
+                    <div class="ceo-signature">
+                        <p>Jasper Gomez</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="subfooter">
+        <div class="footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <a href="#top" class="logo-link">
+                        <img src="pics/logo.jpg" alt="Mr. Chicken Logo" class="logo-img">
+                        <span class="logo-text">Mr. Chicken</span>
+                    </a>
+                </div>
+                <p><i class="fas fa-map-marker-alt"></i> La Paz, Pampanga, Philippines</p>
+                <p><i class="fas fa-clock"></i> Mon to Sat: 8:00 AM to 5:00 PM</p>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mr. Chicken. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <hr>
+            <div id="cart-items-list"></div>
+            <div id="cart-main-footer" class="cart-footer">
+                <div class="cart-summary-row">
+                    <span class="summary-label">Total Amount</span>
+                    <span class="summary-value">₱<span id="cart-total-price">0.00</span></span>
+                </div>
+                <button class="checkout-btn" onclick="showCheckoutForm()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout Details</h2>
+            <p style="font-size: 0.9rem; color: #666;">Please provide your delivery information.</p>
+            <form id="checkout-form" onsubmit="handleOrderSubmit(event)">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" required placeholder="Juan Dela Cruz">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="0912 345 6789">
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" required placeholder="Street, Barangay, City/Municipality"></textarea>
+                </div>
+                <div class="cart-summary-row" style="margin-top: 15px;">
+                    <span>Order Total:</span>
+                    <span class="summary-value">₱<span id="checkout-total-price">0.00</span></span>
+                </div>
+                <button type="submit" class="checkout-btn">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <div style="font-size: 3rem; color: #4CAF50; margin-bottom: 15px;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for choosing Mr. Chicken. We have received your order and will contact you shortly via the phone number provided.</p>
+            <p><strong>Order Reference:</strong> <span id="order-ref"></span></p>
+            <button class="checkout-btn" onclick="closeConfirmation()">Close</button>
+        </div>
+    </div>
+
+    <div id="toast-notification" class="toast">Added to cart!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
